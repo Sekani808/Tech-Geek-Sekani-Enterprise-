@@ -1,373 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tech Geek Sekani Enterprise | Premium Laptops</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekani Msachi - Chemical Engineering Innovator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇲🇼</text></svg>">
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+        <div class="must-badge">MUST CHEMICAL ENGINEER</div>
+        
+        <div class="gear-container">
+            <img src="assets/icons/gear-thin.svg" alt="Loading Gear" class="gear-svg">
+        </div>
+        
+        <h1 class="loading-title">Building Something Amazing...</h1>
+        <p class="loading-subtitle">Sekani Msachi - Chemical Engineering Innovator</p>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
 
-        <!-- Load Tailwind CSS v3 from CDN (no install needed) -->
-        <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SIDEBAR TOGGLE BUTTON (Always visible) -->
+    <button id="sidebarToggle" class="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
 
-        <!-- Add Inter font -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-        <!-- Custom styles -->
-        <style>
-            body {
-            font-family: 'Inter', sans-serif;
-            }
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">SM.Jnr</div>
+            <button id="sidebarClose" class="sidebar-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="sidebar-links">
+            <li><a href="#hero" class="sidebar-link active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about" class="sidebar-link"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#experience" class="sidebar-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#skills" class="sidebar-link"><i class="fas fa-laptop-code"></i> Skills</a></li>
+            <li><a href="#projects" class="sidebar-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#contact" class="sidebar-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="sidebar-contact">
+                <p><i class="fas fa-envelope"></i> msachiseka@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +265 980 720 991</p>
+                <p><i class="fas fa-map-marker-alt"></i> Thyolo, Malawi</p>
+            </div>
             
-            .laptop-image {
-            background-color: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 0.875rem;
-            }
-        </style>
-
-        <!-- Configure Tailwind theme -->
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: '#0ea5e9',
-                            secondary: '#0284c7'
-                        }
-                    }
-                }
-            }
-        </script>
-    </head>
-    <body class="bg-gray-50">
-        <!-- Header -->
-        <header class="bg-white shadow-sm sticky top-0 z-10">
-            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <h1 class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                    Tech Geek Sekani Enterprise
-                </h1>
-                <button
-                    id="cartButton"
-                    class="relative p-2 text-gray-700 hover:text-primary"
-                    aria-label="View cart"
-                >
-                    🛒
-                    <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
-                </button>
+            <div class="sidebar-social">
+                <a href="mailto:msachiseka@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/sekani-msachi-93b74229b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Sekani808" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="tel:+265980720991" title="Phone"><i class="fas fa-phone"></i></a>
             </div>
-        </header>
-
-        <!-- Hero -->
-        <section class="py-12 bg-gradient-to-r from-sky-50 to-white">
-            <div class="container mx-auto px-4 text-center max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Premium Laptops. Simple Ordering.</h1>
-                <p class="text-lg text-gray-600">
-                    Browse high-performance laptops from Dell, HP, Lenovo & more. Order instantly via WhatsApp! (This is just a Demo App)
-                </p>
-            </div>
-        </section>
-
-        <!-- Filter Bar -->
-        <section class="py-6 bg-white border-b">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap gap-2 justify-center">
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition" data-brand="all">All Brands</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition" data-brand="Dell">Dell</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition" data-brand="HP">HP</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition" data-brand="Lenovo">Lenovo</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition" data-brand="Acer">Acer</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition" data-brand="ASUS">ASUS</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products Grid -->
-        <section class="py-12">
-            <div class="container mx-auto px-4">
-                <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <!-- Products will be inserted here by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Cart Sidebar (hidden by default) -->
-        <div id="cartSidebar" class="fixed inset-y-0 right-0 w-full max-w-md bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-50">
-            <div class="p-6 border-b">
-                <div class="flex justify-between items-center">
-                    <h2 class="text-xl font-bold">Your Order</h2>
-                    <button id="closeCart" class="text-gray-500 hover:text-gray-700">&times;</button>
-                </div>
-            </div>
-            <div id="cartItems" class="p-6 space-y-4 max-h-[calc(100vh-12rem)] overflow-y-auto">
-                <!-- Cart items go here -->
-            </div>
-            <div class="p-6 border-t">
-                <div class="flex justify-between text-lg font-bold mb-4">
-                    <span>Total:</span>
-                    <span id="cartTotal">K0</span>
-                </div>
-                <a
-                    id="whatsappOrderBtn"
-                    href="#"
-                    target="_blank"
-                    class="w-full block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-medium transition"
-                >
-                    Send Order via WhatsApp
-                </a>
+            
+            <div class="sidebar-copyright">
+                <p>Made by Sekani</p>
+                <p>Malawi, MUST</p>
             </div>
         </div>
+    </div>
 
-        <!-- Backdrop for cart -->
-        <div id="cartBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+    <!-- SIDEBAR OVERLAY (for closing on outside click) -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-        <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-8">
-            <div class="container mx-auto px-4 text-center">
-                <p>© 2026 Tech Geek Sekani Enterprise. All orders processed via WhatsApp.</p>
-                <p class="mt-2 text-gray-400">Blantyre, Limbe, Malawi</p>
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="badge">✨ OPEN TO WORK - INNOVATOR AT MUST</div>
+                <h1 class="hero-title">SEKANI MSACHI</h1>
+                <h2 class="hero-subtitle">Chemical Engineering Student</h2>
+                <p class="hero-description">
+                    Transforming ideas into innovative solutions. I blend engineering expertise with cutting-edge technology to drive sustainable impact and create real-world value for Malawi and beyond.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-rocket"></i> View My Projects
+                    </a>
+                    <a href="mailto:msachiseka@gmail.com" class="btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:msachiseka@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/sekani-msachi-93b74229b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sekani808" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="tel:+265980720991" title="Phone"><i class="fas fa-phone"></i></a>
+                    <span title="Location"><i class="fas fa-map-marker-alt"></i> Thyolo, Malawi</span>
+                </div>
             </div>
-        </footer>
+            <!-- REPLACE YOUR CURRENT PROFILE IMAGE TAG WITH THIS -->
+            <div class="profile-container">
+                <div class="profile-border"></div>
+                <img 
+                    src="assets/images/profile.jpg" 
+                    alt="Sekani Msachi" 
+                    class="profile-pic" 
+                    id="profilePic"
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format';">
+            </div>
+        </div>
+    </section>
 
-        <!-- Product Data & Logic -->
-        <script>
-    // ===== PRODUCT DATA (50 laptops) =====
-            const products = [
-                // Dell
-                { id: 'dell-01', brand: 'Dell', name: 'Dell XPS 13 Plus', price: 3700000, specs: 'Intel i7 • 16GB RAM • 512GB SSD' },
-                { id: 'dell-02', brand: 'Dell', name: 'Dell Inspiron 15', price: 1850000, specs: 'Intel i5 • 8GB RAM • 512GB SSD' },
-                { id: 'dell-03', brand: 'Dell', name: 'Dell Latitude 5440', price: 2700000, specs: 'Intel i5 • 16GB RAM • 512GB SSD' },
-                { id: 'dell-04', brand: 'Dell', name: 'Dell G15 Gaming', price: 1850000, specs: 'i5 • RTX 3050 • 16GB RAM' },
-                { id: 'dell-05', brand: 'Dell', name: 'Dell Vostro 3520', price: 1900000, specs: 'Intel i5 • 16GB RAM • 512GB SSD' },
-                { id: 'dell-06', brand: 'Dell', name: 'Dell Precision 3581', price: 5680000, specs: 'i7 • 32GB RAM • 1TB SSD • RTX A500' },
-                { id: 'dell-07', brand: 'Dell', name: 'Dell Inspiron 14 Plus', price: 1870000, specs: 'i5 • 16GB RAM • 512GB SSD' },
-                { id: 'dell-08', brand: 'Dell', name: 'Dell Alienware m16', price: 6950000, specs: 'i9 • RTX 4070 • 32GB RAM' },
-                { id: 'dell-09', brand: 'Dell', name: 'Dell Latitude 7440', price: 5980000, specs: 'i7 • 32GB RAM • 1TB SSD' },
-                { id: 'dell-10', brand: 'Dell', name: 'Dell Inspiron 16', price: 1650000, specs: 'i5 • 16GB RAM • 1TB SSD' },
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="cards-grid">
+                <div class="glass-card">
+                    <p class="section-text">
+                        I'm a dedicated <strong>Chemical Engineering student</strong> at the Malawi University of Science and Technology (MUST), with a profound passion for creating sustainable solutions to real-world challenges. My journey combines rigorous scientific knowledge with hands-on innovation experience, driven by a commitment to leveraging technology and engineering excellence to create meaningful impact.
+                    </p>
+                </div>
+                <div class="glass-card">
+                    <p class="section-text">
+                        Beyond academics, I'm an entrepreneur and innovator. As the founder of <strong>AXIS (Advanced Xeleration for Industrial Systems)</strong>, I lead a team of 18 passionate individuals working on transformative projects spanning water purification, healthcare technology, sustainable agriculture, and AI-driven solutions. I believe in the power of collaboration, continuous learning, and applying technical expertise to solve problems that matter for Malawi.
+                    </p>
+                </div>
+            </div>
+            <div class="quote-card">
+                <p class="quote">"Innovation is seeing what everybody has seen and thinking what nobody has thought."</p>
+                <p class="quote-author">— Albert Szent-Györgyi</p>
+            </div>
+        </div>
+    </section>
 
-                // HP
-                { id: 'hp-01', brand: 'HP', name: 'HP Spectre x360', price: 6700000, specs: 'i7 • 16GB RAM • 1TB SSD • OLED' },
-                { id: 'hp-02', brand: 'HP', name: 'HP Pavilion 15', price: 1550000, specs: 'Ryzen 5 • 8GB RAM • 512GB SSD' },
-                { id: 'hp-03', brand: 'HP', name: 'HP EliteBook x360', price: 2700000, specs: 'i5 • 16GB RAM • 512GB SSD' },
-                { id: 'hp-04', brand: 'HP', name: 'HP Omen 16', price: 2860000, specs: 'i5 • RTX 4050 • 16GB RAM' },
-                { id: 'hp-05', brand: 'HP', name: 'HP Envy x360', price: 4770000, specs: 'Ryzen 7 • 16GB RAM • 1TB SSD' },
-                { id: 'hp-06', brand: 'HP', name: 'HP ProBook 450', price: 2680000, specs: 'i5 • 16GB RAM • 512GB SSD' },
-                { id: 'hp-07', brand: 'HP', name: 'HP Victus 15', price: 3460000, specs: 'Ryzen 5 • RTX 3050 • 16GB RAM' },
-                { id: 'hp-08', brand: 'HP', name: 'HP ZBook Firefly', price: 7340000, specs: 'i7 • 32GB RAM • 1TB SSD • RTX A500' },
-                { id: 'hp-09', brand: 'HP', name: 'HP Chromebook x360', price: 950000, specs: 'i3 • 8GB RAM • 128GB' },
-                { id: 'hp-10', brand: 'HP', name: 'HP Dragonfly G4', price: 7730000, specs: 'i7 • 32GB RAM • 1TB SSD' },
-
-                // Lenovo
-                { id: 'lenovo-01', brand: 'Lenovo', name: 'ThinkPad X1 Carbon', price: 3830000, specs: 'i7 • 32GB RAM • 1TB SSD' },
-                { id: 'lenovo-02', brand: 'Lenovo', name: 'Yoga 7i 16', price: 3000000, specs: 'i7 • 16GB RAM • 1TB SSD • Touch' },
-                { id: 'lenovo-03', brand: 'Lenovo', name: 'IdeaPad 3', price: 2930000, specs: 'Ryzen 5 • 8GB RAM • 512GB SSD' },
-                { id: 'lenovo-04', brand: 'Lenovo', name: 'Legion Pro 5', price: 2980000, specs: 'Ryzen 7 • RTX 4060 • 16GB RAM' },
-                { id: 'lenovo-05', brand: 'Lenovo', name: 'ThinkBook 14', price: 2670000, specs: 'i5 • 16GB RAM • 512GB SSD' },
-                { id: 'lenovo-06', brand: 'Lenovo', name: 'Slim Pro 7', price: 5460000, specs: 'Ryzen 9 • 32GB RAM • 1TB SSD' },
-                { id: 'lenovo-07', brand: 'Lenovo', name: 'LOQ 15', price: 2550000, specs: 'i5 • RTX 4050 • 16GB RAM' },
-                { id: 'lenovo-08', brand: 'Lenovo', name: 'ThinkPad P16s', price: 4300000, specs: 'i7 • 32GB RAM • 1TB SSD • RTX A500' },
-                { id: 'lenovo-09', brand: 'Lenovo', name: 'IdeaPad Flex 5', price: 3780000, specs: 'Ryzen 7 • 16GB RAM • 512GB SSD • Touch' },
-                { id: 'lenovo-10', brand: 'Lenovo', name: 'Chromebook Duet 3', price: 960000, specs: 'Snapdragon • 8GB RAM • 128GB' },
-
-                // Acer
-                { id: 'acer-01', brand: 'Acer', name: 'Swift X', price: 2600000, specs: 'Ryzen 7 • RTX 3050 • 16GB RAM' },
-                { id: 'acer-02', brand: 'Acer', name: 'Aspire 5', price: 1680000, specs: 'i5 • 8GB RAM • 512GB SSD' },
-                { id: 'acer-03', brand: 'Acer', name: 'Predator Helios 16', price: 5420000, specs: 'i7 • RTX 4070 • 32GB RAM' },
-                { id: 'acer-04', brand: 'Acer', name: 'TravelMate P6', price: 4560000, specs: 'i5 • 16GB RAM • 512GB SSD' },
-                { id: 'acer-05', brand: 'Acer', name: 'Chromebook Spin 714', price: 3600000, specs: 'i5 • 8GB RAM • 128GB SSD • Touch' },
-                { id: 'acer-06', brand: 'Acer', name: 'ConceptD 7', price: 8940000, specs: 'i7 • RTX 4000 • 32GB RAM • 2TB SSD' },
-                { id: 'acer-07', brand: 'Acer', name: 'Nitro 5', price: 3400000, specs: 'i5 • RTX 3050 • 16GB RAM' },
-                { id: 'acer-08', brand: 'Acer', name: 'Swift Go 14', price: 4570000, specs: 'i5 • 16GB RAM • 1TB SSD • OLED' },
-                { id: 'acer-09', brand: 'Acer', name: 'Enduro N3', price: 3480000, specs: 'i5 • 16GB RAM • 512GB SSD • Rugged' },
-                { id: 'acer-10', brand: 'Acer', name: 'Aspire 3', price: 3790000, specs: 'Celeron • 4GB RAM • 128GB' },
-
-                // ASUS
-                { id: 'asus-01', brand: 'ASUS', name: 'Zenbook S 13', price: 9990000, specs: 'i7 • 16GB RAM • 1TB SSD • OLED' },
-                { id: 'asus-02', brand: 'ASUS', name: 'VivoBook 15', price: 1790000, specs: 'i3 • 8GB RAM • 512GB SSD' },
-                { id: 'asus-03', brand: 'ASUS', name: 'ROG Zephyrus G14', price: 5599000, specs: 'Ryzen 9 • RTX 4060 • 16GB RAM' },
-                { id: 'asus-04', brand: 'ASUS', name: 'ExpertBook B9', price: 1399000, specs: 'i7 • 16GB RAM • 1TB SSD' },
-                { id: 'asus-05', brand: 'ASUS', name: 'Vivobook Pro 16', price: 5990000, specs: 'Ryzen 7 • RTX 3050 • 16GB RAM' },
-                { id: 'asus-06', brand: 'ASUS', name: 'TUF Gaming A15', price: 8490000, specs: 'Ryzen 7 • RTX 4050 • 16GB RAM' },
-                { id: 'asus-07', brand: 'ASUS', name: 'Vivobook S 15', price: 6490000, specs: 'i5 • 16GB RAM • 512GB SSD • OLED' },
-                { id: 'asus-08', brand: 'ASUS', name: 'ProArt StudioBook H7', price: 74990000, specs: 'i9 • RTX 4000 • 64GB RAM • 2TB SSD' },
-                { id: 'asus-09', brand: 'ASUS', name: 'Vivobook Go 14', price: 2290000, specs: 'Ryzen 3 • 8GB RAM • 128GB' },
-                { id: 'asus-10', brand: 'ASUS', name: 'Zenbook 14 Flip', price: 5990000, specs: 'i5 • 16GB RAM • 1TB SSD • OLED Touch' }
-            ];
-            // Convert product name to image filename
-            function getNameBasedImageFilename(name) {
-                return name
-                    .toLowerCase()               // "Dell XPS 13 Plus" → "dell xps 13 plus"
-                    .replace(/[^a-z0-9\s]/g, '') // Remove special chars (like parentheses)
-                    .replace(/\s+/g, '-')        // Replace spaces with hyphens
-                    .replace(/-+$/, '')          // Remove trailing hyphens
-                    + '.jpg';
-            }
-
-            // ===== DOM ELEMENTS =====
-            const productsGrid = document.getElementById('productsGrid');
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const cartButton = document.getElementById('cartButton');
-            const closeCart = document.getElementById('closeCart');
-            const cartBackdrop = document.getElementById('cartBackdrop');
-            const cartSidebar = document.getElementById('cartSidebar');
-            const cartItems = document.getElementById('cartItems');
-            const cartTotalEl = document.getElementById('cartTotal');
-            const whatsappOrderBtn = document.getElementById('whatsappOrderBtn');
-            const cartCountEl = document.getElementById('cartCount');
-
-            // ===== CART STATE =====
-            let cart = [];
-
-            // ===== RENDER PRODUCTS =====
-            function renderProducts(productsToShow) {
-                productsGrid.innerHTML = '';
-                productsToShow.forEach(product => {
-                    const safeImageName = getNameBasedImageFilename(product.name);
-                    
-                    const card = document.createElement('div');
-                    card.className = 'bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden';
-                    card.innerHTML = `
-                        <img 
-                            src="images/${safeImageName}" 
-                            alt="${product.name}" 
-                            class="w-full h-48 object-cover"
-                            onerror="this.parentElement.classList.add('bg-gray-200'); this.remove();"
-                        >
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-primary">${product.brand}</span>
-                            <h3 class="font-bold mt-1">${product.name}</h3>
-                            <p class="text-gray-600 text-sm mt-2">${product.specs}</p>
-                            <p class="text-lg font-bold text-gray-900 mt-3">K${product.price.toLocaleString()}</p>
-                            <button class="add-to-cart-btn mt-4 w-full bg-primary hover:bg-secondary text-white py-2 rounded-lg transition" data-id="${product.id}">
-                                Add to Order
-                            </button>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+        <div class="section-container">
+            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Co-lead Developer</h3>
+                            <span class="date">January 2026 - Present</span>
                         </div>
-                    `;
-                    productsGrid.appendChild(card);
-                });
+                        <p class="company">FC Web Technologies</p>
+                        <p class="description">Overseeing the development of web applications and ensuring they meet client requirements. Collaborating with design teams to implement user-friendly interfaces and managing project timelines effectively.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-crown"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Founder & President</h3>
+                            <span class="date">March 2025 - Present</span>
+                        </div>
+                        <p class="company">AXIS - Advanced Xeleration for Industrial Systems</p>
+                        <p class="description">Leading a team of 18 innovators focused on promoting entrepreneurship at MUST. Organizing workshops, hackathons, and mentorship programs while driving projects like PuriMadzi (water purification), ClinicFlow (healthcare AI), SunFlake Drier (sustainable agriculture), and more.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-robot"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Intern</h3>
+                            <span class="date">November 2025 - Present</span>
+                        </div>
+                        <p class="company">QORE AI LABS</p>
+                        <p class="description">Contributing to Mphuzitsi AI, an educational gaming platform for STEM learning. Ensuring alignment with Malawi's educational standards, enhancing user experience, and managing data collection and dataset optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                // Add event listeners to new buttons
-                document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.dataset.id;
-                        addToCart(id);
-                    });
-                });
-            }
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+        <div class="section-container">
+            <h2 class="section-title">SKILLS & TOOLS</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js-square skill-icon"></i>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <span class="skill-name">SQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-cogs skill-icon"></i>
+                    <span class="skill-name">MATLAB</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-project-diagram skill-icon"></i>
+                    <span class="skill-name">Project Management</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt skill-icon"></i>
+                    <span class="skill-name">Git & GitHub</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-drafting-compass skill-icon"></i>
+                    <span class="skill-name">AutoCAD & SolidWorks</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-react skill-icon"></i>
+                    <span class="skill-name">React & Node.js</span>
+                </div>
+            </div>
+            
+            <div class="languages-section">
+                <h3 class="languages-title">Languages</h3>
+                <div class="language-item">
+                    <div class="language-header">
+                        <span>English</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <div class="language-header">
+                        <span>Chichewa</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <div class="language-header">
+                        <span>French</span>
+                        <span>40%</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // ===== FILTER LOGIC =====
-            function setActiveFilter(brand) {
-                filterButtons.forEach(btn => {
-                    if (btn.dataset.brand === brand) {
-                        btn.classList.add('bg-primary', 'text-white', 'border-primary');
-                    } else {
-                        btn.classList.remove('bg-primary', 'text-white', 'border-primary');
-                    }
-                });
-            }
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+        <div class="section-container">
+            <h2 class="section-title">FEATURED PROJECTS</h2>
+            <div class="projects-grid">
+                <div class="project-card" style="--project-color: #1e40af;">
+                    <div class="project-image">
+                        <i class="fas fa-tint project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">PuriMadzi</h3>
+                        <p class="project-description">A hybrid grid+solar water purification system designed for low-resource communities using Reverse Osmosis, UV sterilization, Moringa flocculation, and carbon filtration.</p>
+                        <div class="achievement-badge">
+                            <i class="fas fa-check-circle"></i> Passed Lab Tests with >95% Filtration Efficiency
+                        </div>
+                        <button class="project-btn">View Details →</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" style="--project-color: #4338ca;">
+                    <div class="project-image">
+                        <i class="fas fa-hospital project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ClinicFlow</h3>
+                        <p class="project-description">AI-powered clinic management system streamlining patient records, appointments, and billing to improve healthcare delivery efficiency while reducing administrative burden.</p>
+                        <div class="achievement-badge">
+                            <i class="fas fa-check-circle"></i> Functional Prototype with Core Features
+                        </div>
+                        <button class="project-btn">View Details →</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" style="--project-color: #be123c;">
+                    <div class="project-image">
+                        <i class="fas fa-sun project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SunFlake Drier</h3>
+                        <p class="project-description">Hybrid solar+grid convection drying system for small agricultural industries with automatic power switching to ensure consistent drying performance while optimizing energy costs.</p>
+                        <div class="achievement-badge">
+                            <i class="fas fa-check-circle"></i> Prototype Design Completed
+                        </div>
+                        <button class="project-btn">View Details →</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" style="--project-color: #7e22ce;">
+                    <div class="project-image">
+                        <i class="fas fa-brain project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Cancer Detection</h3>
+                        <p class="project-description">Machine learning system analyzing skin lesion images to identify potential malignancies and assist dermatologists in early diagnosis with 95% accuracy on test datasets.</p>
+                        <div class="achievement-badge">
+                            <i class="fas fa-check-circle"></i> 95% Accuracy on Test Dataset
+                        </div>
+                        <button class="project-btn">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            function filterProducts(brand) {
-                if (brand === 'all') {
-                    renderProducts(products);
-                } else {
-                    const filtered = products.filter(p => p.brand === brand);
-                    renderProducts(filtered);
-                }
-                setActiveFilter(brand);
-            }
-
-            // ===== CART FUNCTIONS =====
-            function addToCart(productId) {
-                const product = products.find(p => p.id === productId);
-                if (product) {
-                    const existing = cart.find(item => item.id === productId);
-                    if (existing) {
-                        existing.quantity += 1;
-                    } else {
-                        cart.push({ ...product, quantity: 1 });
-                    }
-                    updateCart();
-                }
-            }
-
-            function updateCart() {
-                // Update count badge
-                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-                cartCountEl.textContent = totalItems;
-
-                // Render cart items
-                cartItems.innerHTML = '';
-                if (cart.length === 0) {
-                    cartItems.innerHTML = '<p class="text-gray-500">Your order is empty.</p>';
-                    whatsappOrderBtn.href = '#';
-                    cartTotalEl.textContent = '$0';
-                    return;
-                }
-
-                let total = 0;
-                cart.forEach(item => {
-                    const itemTotal = item.price * item.quantity;
-                    total += itemTotal;
-                    const div = document.createElement('div');
-                    div.className = 'flex justify-between items-start pb-4 border-b';
-                    div.innerHTML = `
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div class="glass-card contact-card">
+                <p class="contact-intro">
+                    I'm always excited to discuss new projects, collaboration opportunities, or innovative ideas. Reach out—I'd love to hear from you!
+                </p>
+                
+                <div class="contact-links-large">
+                    <a href="mailto:msachiseka@gmail.com" class="contact-link">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <h3 class="font-medium">${item.name}</h3>
-                            <p class="text-gray-600 text-sm">K${item.price.toLocaleString()} × ${item.quantity}</p>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">msachiseka@gmail.com</div>
                         </div>
-                        <button class="remove-item text-red-500 hover:text-red-700" data-id="${item.id}">×</button>
-                    `;
-                    cartItems.appendChild(div);
-                });
+                    </a>
+                    <a href="https://www.linkedin.com/in/sekani-msachi-93b74229b/" target="_blank" class="contact-link">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <div class="contact-label">LinkedIn</div>
+                            <div class="contact-value">sekani-msachi</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Sekani808" target="_blank" class="contact-link">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <div class="contact-label">GitHub</div>
+                            <div class="contact-value">Sekani808</div>
+                        </div>
+                    </a>
+                    <a href="tel:+265980720991" class="contact-link">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">+265 980 720 991</div>
+                        </div>
+                    </a>
+                    <div class="contact-link">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="contact-label">Location</div>
+                            <div class="contact-value">Thyolo, Malawi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-note">
+                    <i class="fas fa-info-circle"></i> For project inquiries, please email me directly. I respond within 48 hours.
+                </div>
+            </div>
+        </div>
+    </section>
 
-                cartTotalEl.textContent = `K${total.toLocaleString()}`;
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p class="footer-text">Sekani Msachi © <span id="year"></span> • Chemical Engineering Innovator</p>
+            <p class="footer-text">Made by Sekani Msachi • 🇲🇼 MUST</p>
+            <p class="footer-quote">"Engineering solutions for a better tomorrow"</p>
+        </div>
+    </footer>
 
-                // Generate WhatsApp message
-                let message = "Hi Sekani!, I'd like to order:\n";
-                cart.forEach(item => {
-                    message += `- ${item.name} (Qty: ${item.quantity}) - K${(item.price * item.quantity).toLocaleString()}\n`;
-                });
-                message += `\nTotal: K${total}\nThank you!`;
-                const encodedMessage = encodeURIComponent(message);
-                whatsappOrderBtn.href = `https://wa.me/265980720991?text=${encodedMessage}`;
-
-                // Add remove listeners
-                document.querySelectorAll('.remove-item').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.dataset.id;
-                        cart = cart.filter(item => item.id !== id);
-                        updateCart();
-                    });
-                });
-            }
-
-            // ===== EVENT LISTENERS =====
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterProducts(btn.dataset.brand);
-                });
-            });
-
-            cartButton.addEventListener('click', () => {
-                cartSidebar.classList.remove('translate-x-full');
-                cartBackdrop.classList.remove('hidden');
-            });
-
-            closeCart.addEventListener('click', () => {
-                cartSidebar.classList.add('translate-x-full');
-                cartBackdrop.classList.add('hidden');
-            });
-
-            cartBackdrop.addEventListener('click', () => {
-                cartSidebar.classList.add('translate-x-full');
-                cartBackdrop.classList.add('hidden');
-            });
-
-            // ===== INITIALIZE =====
-            renderProducts(products);
-            setActiveFilter('all');
-            updateCart();
-        </script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
